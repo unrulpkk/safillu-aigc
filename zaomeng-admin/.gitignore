@@ -1,0 +1,25 @@
+node_modules
+build-zaomeng.log
+typecheck-zaomeng.log
+.DS_Store
+dist
+dist-ssr
+/dist*
+pnpm-debug
+auto-*.d.ts
+.idea
+.history
+output/
+.playwright-cli/
+
+dev-zaomeng.log
+
+# Private local and deployment settings
+.env.local
+.env.*.local
+.env.dev
+config.local.*
+**/secrets/
+**/backups/
+!.env.local.example
+!**/.env.local.example

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Safillu creative workflow</title>
+  <desc id="desc">A diagram connecting prompts, generation, refinement, and an asset library, supported by accounts, credits, administration, and Docker deployment.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1200" y2="390" gradientUnits="userSpaceOnUse"><stop stop-color="#0C1224"/><stop offset="1" stop-color="#16112E"/></linearGradient>
+    <linearGradient id="accent" x1="48" x2="1152" gradientUnits="userSpaceOnUse"><stop stop-color="#63E9DA"/><stop offset=".55" stop-color="#A99AFF"/><stop offset="1" stop-color="#EEA4D5"/></linearGradient>
+  </defs>
+  <rect width="1200" height="390" rx="22" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="388" rx="21" stroke="#30304E"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="56" fill="url(#accent)" font-size="28" font-weight="700" letter-spacing="2">SAFILLU</text>
+    <text x="48" y="91" fill="#C1C5DB" font-size="17">One idea. A complete creative workflow.</text>
+    <rect x="945" y="35" width="207" height="31" rx="15.5" fill="#22213C" stroke="#44405E"/>
+    <text x="1048" y="55" text-anchor="middle" fill="#D9D6F4" font-size="12">OPEN SOURCE · SELF-HOSTED</text>
+    <g stroke="#383A5B" fill="#191E35">
+      <rect x="48" y="133" width="239" height="141" rx="14"/><rect x="336" y="133" width="239" height="141" rx="14"/>
+      <rect x="624" y="133" width="239" height="141" rx="14"/><rect x="912" y="133" width="240" height="141" rx="14"/>
+    </g>
+    <g stroke="#8E91B7" stroke-width="1.5"><path d="M299 204H322M317 199L322 204L317 209"/><path d="M587 204H610M605 199L610 204L605 209"/><path d="M875 204H898M893 199L898 204L893 209"/></g>
+    <g font-size="12" font-weight="700" letter-spacing="1.8">
+      <text x="69" y="160" fill="#63E9DA">01 / PROMPT</text><text x="357" y="160" fill="#A99AFF">02 / GENERATE</text>
+      <text x="645" y="160" fill="#C1AEFF">03 / REFINE</text><text x="933" y="160" fill="#EEA4D5">04 / KEEP</text>
+    </g>
+    <g font-size="21" font-weight="700" fill="#F5F5FF">
+      <text x="69" y="199">Describe your idea</text><text x="357" y="199">Bring it to life</text><text x="645" y="199">Try another take</text><text x="933" y="199">Build your library</text>
+    </g>
+    <g font-size="13" fill="#A9B1CD">
+      <text x="69" y="230">Prompt · references · settings</text><text x="357" y="230">Video · image · voice · music</text>
+      <text x="645" y="230">Restore inputs · regenerate</text><text x="933" y="230">Preview · download · reuse</text>
+    </g>
+    <path d="M48 307H1152" stroke="#34334E"/>
+    <g font-size="13" fill="#AAAFC9">
+      <text x="48" y="344">Accounts &amp; roles</text><text x="291" y="344">Credits &amp; history</text><text x="533" y="344">Content administration</text><text x="822" y="344">Docker deployment</text><text x="1152" y="344" text-anchor="end" fill="#C4B5FD">EN / 中文 / ES</text>
+    </g>
+  </g>
+</svg>

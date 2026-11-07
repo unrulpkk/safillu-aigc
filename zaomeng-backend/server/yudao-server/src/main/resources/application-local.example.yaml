@@ -1,0 +1,19 @@
+# Copy to application-local.yaml; never commit the local file.
+spring:
+  config:
+    import: classpath:application-safillu.yaml
+  application:
+    name: safillu
+  datasource:
+    dynamic:
+      datasource:
+        master:
+          url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:zaomeng_aigc_20261103}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true
+          username: ${DB_USERNAME:safillu_app}
+          password: ${DB_PASSWORD}
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+logging:
+  file:
+    name: ${LOG_FILE:./logs/safillu-local.log}

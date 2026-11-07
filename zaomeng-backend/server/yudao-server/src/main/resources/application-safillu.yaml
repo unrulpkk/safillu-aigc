@@ -1,0 +1,79 @@
+server:
+  port: 48080
+spring:
+  quartz:
+    scheduler-name: ${QUARTZ_SCHEDULER_NAME:zaomeng-native-jobs}
+    auto-startup: true
+    job-store-type: jdbc
+    wait-for-jobs-to-complete-on-shutdown: true
+    jdbc:
+      initialize-schema: never
+    properties:
+      org.quartz.scheduler.instanceId: AUTO
+      org.quartz.jobStore.isClustered: true
+      org.quartz.jobStore.clusterCheckinInterval: 15000
+      org.quartz.threadPool.threadCount: 3
+  datasource:
+    dynamic:
+      primary: master
+      strict: true
+      datasource:
+        master:
+          url: jdbc:mysql://${DB_HOST:mysql}:${DB_PORT:3306}/${DB_NAME:zaomeng_aigc_20261103}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true
+          username: ${DB_USERNAME:zaomeng_app}
+          password: ${DB_PASSWORD}
+      druid:
+        initial-size: 1
+        min-idle: 1
+        max-active: 12
+    druid:
+      stat-view-servlet:
+        enabled: false
+  data:
+    redis:
+      host: ${REDIS_HOST:redis}
+      port: ${REDIS_PORT:6379}
+      database: ${REDIS_DATABASE:0}
+      password: ${REDIS_PASSWORD:}
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 52MB
+  boot:
+    admin:
+      client:
+        enabled: false
+management:
+  endpoints:
+    enabled-by-default: false
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
+knife4j:
+  enable: false
+mybatis-plus:
+  encryptor:
+    password: ${DATA_ENCRYPTION_KEY}
+yudao:
+  aigc:
+    social-enabled: false
+    email-registration-required: true
+  security:
+    mock-enable: false
+    password-encoder-length: 10
+    permit-all-urls: []
+  captcha:
+    enable: false
+  tenant:
+    enable: true
+  websocket:
+    enable: true
+  access-log:
+    enable: false
+logging:
+  file:
+    name: ${LOG_FILE:./logs/safillu.log}
+  level:
+    cn.iocoder.yudao.module.aigc: INFO

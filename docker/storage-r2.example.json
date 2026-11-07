@@ -1,0 +1,12 @@
+{
+  "@class": "cn.iocoder.yudao.module.infra.framework.file.core.client.s3.S3FileClientConfig",
+  "endpoint": "https://YOUR_ACCOUNT_ID.r2.cloudflarestorage.com",
+  "bucket": "YOUR_BUCKET",
+  "region": "auto",
+  "domain": "https://YOUR_PUBLIC_DOMAIN",
+  "accessKey": "file:/run/secrets/storage/r2/access_key",
+  "accessSecret": "file:/run/secrets/storage/r2/access_secret",
+  "enablePathStyleAccess": true,
+  "enablePublicAccess": true,
+  "encryptContent": false
+}

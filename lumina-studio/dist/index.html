@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111213"><meta name="description" content="Safillu 创作空间 — 让每一个灵感，都有画面。">
+  <title>Safillu · 创作空间</title><link rel="stylesheet" href="style.css?v=20261107.4"><link rel="stylesheet" href="studio-features.css?v=20261107.4"><link rel="stylesheet" href="studio-cloud.css?v=20261107.4">
+<link rel="stylesheet" href="studio-i18n.css?v=20261107.4"><script src="studio-translations.js?v=20261107.4"></script><script src="studio-i18n.js?v=20261107.4"></script>
+<link rel="stylesheet" href="studio-explore.css?v=20261107.4">
+</head>
+<body>
+<svg class="svg-defs" aria-hidden="true"><defs>
+<symbol id="spark" viewBox="0 0 24 24"><path d="m12 2 3.3 6.7L22 12l-6.7 3.3L12 22l-3.3-6.7L2 12l6.7-3.3Z"/></symbol>
+<symbol id="image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-6 4 4 3-3 5 5"/></symbol>
+<symbol id="video" viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="14" rx="4"/><path d="m17 10 4-3v10l-4-3M8 9l5 3-5 3Z"/></symbol>
+<symbol id="folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2ZM3 11h18"/></symbol>
+<symbol id="compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6Z"/></symbol>
+<symbol id="tools" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6" rx="2"/><rect x="15" y="3" width="6" height="6" rx="2"/><rect x="3" y="15" width="6" height="6" rx="2"/><path d="M18 14v8m-4-4h8"/></symbol>
+<symbol id="person" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="9" r="3"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></symbol>
+<symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></symbol>
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M12 20V4m-6 6 6-6 6 6"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="refresh" viewBox="0 0 24 24"><path d="M20 8a8 8 0 1 0 0 8M20 3v5h-5"/></symbol>
+<symbol id="download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+<symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+<symbol id="edit" viewBox="0 0 24 24"><path d="m16 3 5 5-12 12-6 1 1-6ZM13 6l5 5"/></symbol>
+<symbol id="music" viewBox="0 0 24 24"><path d="M9 18V5l12-3v13M9 9l12-3"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="18" cy="15" rx="3" ry="3"/></symbol>
+<symbol id="audio" viewBox="0 0 24 24"><path d="M4 9v6M8 5v14M12 2v20M16 6v12M20 9v6"/></symbol>
+<symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+<symbol id="panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16"/></symbol>
+</defs></svg>
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><span class="brand-mark">✦</span><strong>Safillu<span>AI</span></strong><button class="icon-btn collapse" aria-label="收起侧边栏" data-action="sidebar"><svg><use href="#panel"/></svg></button></div>
+ <button class="workspace" data-action="workspace"><span class="workspace-icon">用</span><span>个人空间<small>Personal workspace</small></span><svg><use href="#chevron"/></svg></button>
+ <nav><button class="nav-item active" data-nav="create"><svg><use href="#spark"/></svg>创作<span class="nav-dot"></span></button><button class="nav-item" data-nav="explore"><svg><use href="#compass"/></svg>探索</button><button class="nav-item" data-nav="tools"><svg><use href="#tools"/></svg>AI 工具<span class="badge">NEW</span></button><button class="nav-item" data-nav="assets"><svg><use href="#folder"/></svg>资产</button><button class="nav-item" data-nav="subjects"><svg><use href="#person"/></svg>主体</button></nav>
+ <div class="side-divider"></div><div class="session-label"><span>我的对话</span><button class="icon-btn" data-action="new-session" title="新建对话"><svg><use href="#plus"/></svg></button></div>
+ <div class="session-list" id="sessions"></div>
+ <button class="new-chat" data-action="new-session"><svg><use href="#plus"/></svg>开启新的创作</button>
+ <div class="side-bottom"><div class="daily"><span class="daily-star">✦</span><div>灵感不设限<small>让想象，成为眼前的风景</small></div></div><button class="profile" data-action="workspace"><span class="avatar">L</span><span>我的创作空间<small>个人版</small></span><span class="more">···</span></button></div>
+</aside>
+<main id="main">
+ <header class="topbar"><div class="breadcrumbs"><button class="icon-btn mobile-menu" data-action="sidebar" aria-label="展开侧边栏"><svg><use href="#panel"/></svg></button><span id="page-name">创作空间</span><span class="crumb-slash">/</span><button id="session-name" data-action="rename-current">默认创作<svg><use href="#chevron"/></svg></button></div><div class="top-actions"><span class="demo-badge"><i></i>前端演示</span><button class="icon-btn" data-action="search-session" aria-label="搜索对话"><svg><use href="#search"/></svg></button><div class="top-divider"></div><button class="credits" data-action="credits">✦ <span id="credits">240</span><span class="credit-label">灵感积分</span></button><button class="top-avatar" data-action="workspace" aria-label="个人空间">L</button></div></header>
+ <section class="view" id="view"></section>
+ <section class="composer-wrap" id="composer-wrap"><div class="composer-topline"><span><i></i><span id="composer-hint">让想象发生</span></span><button data-action="bottom">回到底部 ↓</button></div>
+ <div class="composer" id="composer"><div class="reference-strip" id="reference-strip"></div><div class="prompt-row"><button class="upload-tile" data-action="upload-reference" title="上传参考图片"><svg><use href="#plus"/></svg><span>参考图</span></button><textarea id="prompt" rows="2" placeholder="上传参考图，输入文字或 @ 主体，描述你想生成的画面…" aria-label="创作描述"></textarea></div><div class="composer-tools"><div class="param-group"><button class="param mode-param" data-menu="mode"><svg id="mode-icon"><use href="#image"/></svg><span id="mode-label">图片生成</span><svg class="chev"><use href="#chevron"/></svg></button><span class="param-divider"></span><button class="param" data-menu="model"><span class="cube">◇</span><span id="model-label">Seedream 5.0</span><span class="pro-spark">✦</span></button><button class="param" data-menu="format"><span class="ratio-icon"></span><span id="format-label">16:9 · 2K</span></button><button class="param" data-menu="count"><span>▥</span><span id="count-label">2 张</span></button><span class="param-divider"></span><button class="icon-btn" data-action="optimize" title="优化描述"><span class="magic">Tₓ</span></button><button class="icon-btn" data-action="mention" title="引用主体">@</button></div><button id="generate" class="generate" data-action="generate"><span>✦ <b id="cost">8</b><small id="cost-unit"> / 次</small></span><span class="generate-arrow"><svg><use href="#arrow"/></svg></span></button></div><div id="popover" class="popover" hidden></div></div><p class="composer-caption">灵感由你定义 · 内容由 AI 演绎 <span>前端演示，生成使用示例素材</span></p></section>
+</main>
+<input id="file-input" type="file" accept="image/*" multiple hidden><div id="modal-root"></div><div id="toast" role="status"></div>
+<script src="studio-config.js"></script><script src="studio-utils.js?v=20261107.4"></script><script src="app.js?v=20261107.4"></script><script src="studio-features.js?v=20261107.4"></script><script src="studio-cloud.js?v=20261107.4"></script><script src="studio-media-cache.js?v=20261107.4"></script><script src="studio-media.js?v=20261107.4"></script><script src="studio-tasks.js?v=20261107.4"></script><script src="studio-payments.js?v=20261107.4"></script>
+<script src="studio-google.js?v=20261107.4"></script>
+<script src="studio-explore.js?v=20261107.4"></script>
+</body></html>
+

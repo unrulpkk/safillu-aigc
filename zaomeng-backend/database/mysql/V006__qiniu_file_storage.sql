@@ -1,0 +1,3 @@
+-- Uses yudao infra_file_config; secrets are runtime file references, never inline keys.
+USE zaomeng_aigc_20261103;
+INSERT INTO infra_file_config(id,name,storage,remark,master,config,creator) VALUES(880002,'造梦七牛云对象存储',20,'新增文件使用七牛；原本地资产按原 config_id 读取',b'0','{"@class":"cn.iocoder.yudao.module.infra.framework.file.core.client.s3.S3FileClientConfig","endpoint":"s3.cn-east-1.qiniucs.com","domain":"https://your-qiniu-domain.example","bucket":"your-qiniu-bucket","region":"cn-east-1","accessKey":"file:/run/secrets/storage/access_key","accessSecret":"file:/run/secrets/storage/access_secret","enablePathStyleAccess":true,"enablePublicAccess":false}','codex-operator');

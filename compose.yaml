@@ -1,0 +1,135 @@
+name: ${COMPOSE_PROJECT_NAME:-safillu}
+
+x-bootstrap: &bootstrap
+  image: ${COMPOSE_PROJECT_NAME:-safillu}-bootstrap:local
+  volumes:
+    - ${SAFILLU_RUNTIME_DIR:-./.runtime}/secrets:/run/secrets
+
+services:
+  secrets-init:
+    <<: *bootstrap
+    build:
+      context: .
+      dockerfile: docker/bootstrap.Dockerfile
+    command: ["secrets"]
+    restart: "no"
+
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ${SAFILLU_RUNTIME_DIR:-./.runtime}/secrets:/run/secrets:ro
+    command: ["--default-time-zone=+00:00", "--max-connections=100"]
+    depends_on:
+      secrets-init: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=$$(cat /run/secrets/mysql_root) mysql -uroot -Nse 'SELECT 1' >/dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+      start_period: 20s
+    mem_limit: 1g
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["sh", "-ec", "exec redis-server --appendonly yes --requirepass \"$$(cat /run/secrets/redis_password)\" --maxmemory 128mb --maxmemory-policy noeviction"]
+    volumes:
+      - redis_data:/data
+      - ${SAFILLU_RUNTIME_DIR:-./.runtime}/secrets:/run/secrets:ro
+    depends_on:
+      secrets-init: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD-SHELL", "REDISCLI_AUTH=$$(cat /run/secrets/redis_password) redis-cli ping | grep -q PONG"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 192m
+
+  db-init:
+    <<: *bootstrap
+    command: ["database"]
+    restart: "no"
+    environment:
+      DB_HOST: mysql
+      DB_NAME: ${DB_NAME:-safillu}
+      DB_USERNAME: ${DB_USERNAME:-safillu_app}
+    depends_on:
+      mysql: {condition: service_healthy}
+
+  backend:
+    image: ${COMPOSE_PROJECT_NAME:-safillu}-backend:local
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    restart: unless-stopped
+    environment:
+      DB_HOST: mysql
+      DB_NAME: ${DB_NAME:-safillu}
+      DB_USERNAME: ${DB_USERNAME:-safillu_app}
+      REDIS_HOST: redis
+      QUARTZ_SCHEDULER_NAME: safillu-jobs
+      QINIU_STORAGE_BOOTSTRAP: ${QINIU_STORAGE_BOOTSTRAP:-false}
+      R2_STORAGE_BOOTSTRAP: ${R2_STORAGE_BOOTSTRAP:-auto}
+      GOOGLE_REDIRECT_URI: ${GOOGLE_REDIRECT_URI:-http://localhost:8088/app-api/member/auth/google-login}
+      GOOGLE_RETURN_ORIGIN: ${PUBLIC_ORIGIN:-http://localhost:8088}
+      STRIPE_MODE: ${STRIPE_MODE:-TEST}
+      STRIPE_RETURN_ORIGIN: ${PUBLIC_ORIGIN:-http://localhost:8088}
+      STRIPE_PUBLIC_WEBHOOK_URL: ${STRIPE_PUBLIC_WEBHOOK_URL:-}
+      STRIPE_LIVE_ENABLED: ${STRIPE_LIVE_ENABLED:-false}
+      JAVA_OPTS: ${JAVA_OPTS:--Xms128m -Xmx768m}
+    volumes:
+      - uploads:/app/uploads
+      - logs:/app/logs
+      - ${SAFILLU_RUNTIME_DIR:-./.runtime}/secrets:/run/secrets:ro
+    depends_on:
+      db-init: {condition: service_completed_successfully}
+      redis: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS -H 'tenant-id: 1' http://localhost:48080/admin-api/aigc/auth/google/config | grep -q '\"code\":0'"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 90s
+    mem_limit: 1200m
+
+  web:
+    image: ${COMPOSE_PROJECT_NAME:-safillu}-web:local
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    restart: unless-stopped
+    ports: ["${WEB_PORT:-8088}:80"]
+    depends_on:
+      backend: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    mem_limit: 96m
+
+  admin:
+    image: ${COMPOSE_PROJECT_NAME:-safillu}-admin:local
+    build:
+      context: .
+      dockerfile: docker/admin.Dockerfile
+    restart: unless-stopped
+    ports: ["${ADMIN_PORT:-8089}:80"]
+    depends_on:
+      backend: {condition: service_healthy}
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    mem_limit: 128m
+
+volumes:
+  mysql_data:
+  redis_data:
+  uploads:
+  logs:

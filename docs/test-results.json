@@ -1,0 +1,118 @@
+{
+  "testedOn": "2026-11-07",
+  "timezone": "Asia/Shanghai",
+  "frontendAssetVersion": "20261107.4",
+  "status": "PASS_WITH_RECORDED_LIMITATIONS",
+  "currentAutomatedSuites": [
+    {
+      "name": "Creator helpers, upload order, bounded media cache",
+      "passed": 15,
+      "failed": 0,
+      "command": "npm --prefix lumina-studio test"
+    },
+    {
+      "name": "Creator DOM and multilingual behavior",
+      "passed": 38,
+      "failed": 0,
+      "command": "node --test zaomeng-backend/qa/frontend.test.cjs"
+    },
+    {
+      "name": "Explore content integration",
+      "passed": 4,
+      "failed": 0,
+      "command": "node --test zaomeng-backend/qa/explore.test.cjs"
+    }
+  ],
+  "recordedBackendSuites": [
+    {
+      "name": "Linux Java 21 Docker build",
+      "passed": 32,
+      "failed": 0,
+      "recordedOn": "2026-11-07"
+    },
+    {
+      "name": "Email HTTP/MySQL/Redis/isolated SMTP",
+      "passed": 28,
+      "failed": 0,
+      "recordedOn": "2026-11-07"
+    },
+    {
+      "name": "Installer bootstrap",
+      "passed": 4,
+      "failed": 0,
+      "recordedOn": "2026-11-07"
+    },
+    {
+      "name": "Native admin/operator and restart baseline",
+      "passed": 17,
+      "failed": 0,
+      "recordedOn": "2026-11-06"
+    },
+    {
+      "name": "Linux installer refusal guards",
+      "passed": 3,
+      "failed": 0,
+      "recordedOn": "2026-11-06"
+    }
+  ],
+  "realModelChecks": {
+    "staging": {
+      "passed": 13,
+      "failed": 0
+    },
+    "production": {
+      "passed": 17,
+      "failed": 0
+    }
+  },
+  "realModelConfiguration": {
+    "model": "best-minimax-h3",
+    "durationSeconds": 4,
+    "resolution": "480P",
+    "inputs": "public R2 image/audio/video URLs",
+    "regenerationPreservedOriginalInput": true,
+    "twoGeneratedVideosPointsCharged": 8,
+    "remainingReservedPoints": 0,
+    "duplicateSettlements": 0
+  },
+  "media": {
+    "fileCodec": "H.264 / AAC",
+    "actualDurationSeconds": 4.458333,
+    "authenticatedRangeStatus": 206,
+    "authenticatedRangeBytes": 65536,
+    "fixtureVideoRequestsBeforeReload": 3,
+    "fixtureVideoRequestsAfterReload": 3,
+    "sourceAfterReload": "local blob URL from IndexedDB",
+    "posterWidth": 640,
+    "browserFixture": true,
+    "cachedVideoPlayedToEnd": true,
+    "cachedVideoPlaybackError": null,
+    "brokenSidebarImages": 0
+  },
+  "cachePolicy": {
+    "totalMaxMiB": 64,
+    "fileMaxMiB": 16,
+    "maxEntries": 128,
+    "ttlDays": 14,
+    "partition": "authenticated account and asset version",
+    "largerFiles": "progressive network playback",
+    "blockedStorageFallback": "in-memory or network"
+  },
+  "coveragePercentage": null,
+  "sensitiveEvidenceIncluded": false,
+  "frontendSourceSha256": "1b97d397d6c3837fa4c463cab050b38f929bc5217cdefc6b8f0e73615b82a185",
+  "publicationPreflight": {
+    "date": "2026-11-07",
+    "trackedFiles": 5471,
+    "gitleaksVersion": "8.30.1",
+    "gitleaksFindings": 0,
+    "knownPrivateValueMatches": 0,
+    "embeddedDerPrivateKeys": 0,
+    "linuxBackendTestsPassed": 32,
+    "adminProductionBuild": "passed with cached Node 22 / Nginx 1.28 image digests",
+    "frontendTestsPassed": 57,
+    "installerAndPublicFileTestsPassed": 9,
+    "legacyStorageAndDataPreserved": true,
+    "secretScanWorkflowAdded": true
+  }
+}

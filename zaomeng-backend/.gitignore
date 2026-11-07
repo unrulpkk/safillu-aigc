@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+*.log
+target/
+node_modules/
+deploy/secrets/
+*.tar.gz
+
+# Private local and deployment settings
+.env.local
+.env.*.local
+.env.dev
+config.local.*
+**/secrets/
+**/backups/
+!.env.local.example
+!**/.env.local.example
+!deploy/.env.prod
+!deploy/.env.local.example
+
+.env.prod.local
+
+# Legacy deployment overrides are private; root compose uses reviewed templates.
+deploy/.env*

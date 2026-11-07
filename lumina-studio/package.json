@@ -1,0 +1,13 @@
+{
+  "name": "safillu-studio",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Safillu 创作空间",
+  "scripts": {
+    "dev": "node server.cjs",
+    "start": "node server.cjs",
+    "check": "node --check dist/app.js && node --check dist/studio-features.js && node --check dist/studio-utils.js && node --check dist/studio-cloud.js && node --check dist/studio-media-cache.js && node --check dist/studio-media.js && node --check dist/studio-tasks.js && node --check dist/studio-payments.js && node --check dist/studio-google.js && node --check dist/studio-translations.js && node --check dist/studio-i18n.js && node --check dist/studio-explore.js && node --check server.cjs",
+    "test": "node --test test/studio-utils.test.cjs test/upload-order.test.cjs test/media-cache.test.cjs",
+    "start:prod": "node server.cjs --prod"
+  }
+}

@@ -1,0 +1,11 @@
+outputs/
+
+# Private local and deployment settings
+.env.local
+.env.*.local
+.env.dev
+config.local.*
+**/secrets/
+**/backups/
+!.env.local.example
+!**/.env.local.example

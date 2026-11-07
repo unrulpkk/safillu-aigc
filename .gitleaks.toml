@@ -1,0 +1,13 @@
+title = "Safillu secret scanning"
+
+[extend]
+useDefault = true
+
+# Stable Diffusion sampler identifiers are public enum values, not credentials.
+# Restrict the exception to the two exact values in this one source file.
+[[allowlists]]
+description = "Public sampler enum constants"
+condition = "AND"
+paths = ['''(?:^|/)zaomeng-admin/src/views/ai/utils/constants\.ts$''']
+regexTarget = "secret"
+regexes = ['''^(?:K_DPMPP_2S_ANCESTRAL|K_DPM_2_ANCESTRAL)$''']

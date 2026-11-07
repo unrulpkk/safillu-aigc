@@ -1,0 +1,9 @@
+# Secrets must be injected at runtime.
+spring:
+  config:
+    import: classpath:application-safillu.yaml
+  application:
+    name: safillu
+logging:
+  file:
+    name: ${LOG_FILE:/app/logs/safillu.log}

@@ -1,0 +1,1 @@
+{"name":"zaomeng-ui-contract-qa","private":true,"scripts":{"test":"node --test frontend.test.cjs explore.test.cjs"},"devDependencies":{"acorn":"^8.19.0","jsdom":"26.1.0"}}

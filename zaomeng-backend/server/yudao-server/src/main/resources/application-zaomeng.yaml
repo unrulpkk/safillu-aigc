@@ -1,0 +1,4 @@
+# Compatibility alias for existing deployments.
+spring:
+  config:
+    import: classpath:application-prod.yaml
