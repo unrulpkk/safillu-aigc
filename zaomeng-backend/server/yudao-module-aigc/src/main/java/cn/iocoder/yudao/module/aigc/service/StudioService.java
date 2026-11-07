@@ -237,8 +237,7 @@ public class StudioService {
             try(var imageInput=ImageIO.createImageInputStream(new ByteArrayInputStream(data))){var readers=ImageIO.getImageReaders(imageInput);
                 if(readers.hasNext()){var reader=readers.next();try{reader.setInput(imageInput);width=reader.getWidth(0);height=reader.getHeight(0);if((long)width*height>100_000_000)throw error(400,"图片像素超过限制");}finally{reader.dispose();}}}
         }
-        String directory="aigc/"+s.tenant+"/"+s.workspace+"/"+UUID.randomUUID();
-        String url=files.createFile(data,name,directory,mime);
+        String url=files.createFlatFile(data,name,mime);
         var stored=one("SELECT id FROM infra_file WHERE url=? AND deleted=0 ORDER BY id DESC LIMIT 1",url);
         long asset=scopedInsert("aigc_asset",s,map("kind",kind,"source","UPLOAD","status","READY","title",name,"width",width,"height",height));
         scopedInsert("aigc_asset_file",s,map("asset_id",asset,"variant_code","ORIGINAL","infra_file_id",stored.get("id"),"mime_type",mime,"byte_size",data.length,"width",width,"height",height));

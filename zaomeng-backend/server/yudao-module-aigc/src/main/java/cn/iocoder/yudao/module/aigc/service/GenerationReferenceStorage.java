@@ -7,7 +7,6 @@ import cn.iocoder.yudao.module.infra.service.file.FileService;
 import org.springframework.stereotype.Service;
 import java.net.URI;
 import java.util.Map;
-import java.util.UUID;
 import java.util.Base64;
 
 /** Public plaintext references are prepared before any generation request is sent. */
@@ -69,8 +68,7 @@ public class GenerationReferenceStorage {
             if (bytes == null || bytes.length == 0 || bytes.length > maxBytes) {
                 throw failure("REFERENCE_UNAVAILABLE", "参考素材不可用或超过大小限制");
             }
-            String result = files.createFile(bytes, "reference-" + UUID.randomUUID() + "." + extension,
-                    "aigc/" + tenant + "/" + workspace + "/model-inputs/" + task, mime);
+            String result = files.createFlatFile(bytes, "reference." + extension, mime);
             return requirePublicUrl(result);
         } catch (GenerationProvider.ProviderException error) {
             throw error;

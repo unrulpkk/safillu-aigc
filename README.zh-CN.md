@@ -229,6 +229,8 @@ Windows 使用 `.\start.ps1 -EnvFile .env.prod.local`。两份模板都刻意保
 
 Cloudflare R2 配置完整并通过上传、读取、删除校验后，会自动优先启用；配置缺失或校验失败时保留现有主存储。无云凭据的新安装使用本地上传持久卷。R2 模板见 [docker/storage-r2.example.json](docker/storage-r2.example.json)，历史文件继续保留原存储配置 ID。
 
+新的用户上传、生成结果、公开参考副本和探索素材统一使用存储根目录下的 `YYYYMMDD_UUID.扩展名`（UTC 日期），不再创建租户、空间、任务或日期子目录。生成作品的下载文件名采用同样格式；上传素材保留原展示名称，历史文件继续按记录的原路径读取。
+
 密钥文件路径和启用命令见[部署及供应商配置说明](docker/README.txt)。
 
 ## 目录结构

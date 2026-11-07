@@ -260,10 +260,11 @@ public class GenerationService {
         for(int index=0;index<media.size();index++){
             var item=media.get(index);String mime=FileTypeUtils.getMineType(item.bytes(),operation.equals("IMAGE")?"result.png":operation.equals("VIDEO")?"result.mp4":"result.wav");
             if(operation.equals("IMAGE")&&!mime.startsWith("image/")||operation.equals("VIDEO")&&!mime.startsWith("video/")||Set.of("AUDIO","MUSIC").contains(operation)&&!mime.startsWith("audio/"))throw new GenerationProvider.ProviderException("INVALID_MEDIA","模型返回的文件与创作类型不符，积分已退回",false);
-            String extension=mime.equals("image/jpeg")?"jpg":mime.startsWith("image/")?mime.substring(6):mime.startsWith("video/")?"mp4":mime.contains("mpeg")?"mp3":"wav";
-            String name=task.get("task_no")+"-"+(index+1)+"."+extension;
-            String url=files.createFile(item.bytes(),name,"aigc/"+s.tenant()+"/"+s.workspace()+"/generated/"+UUID.randomUUID(),mime);
-            long file=((Number)studio.one("SELECT id FROM infra_file WHERE url=? AND deleted=0 ORDER BY id DESC LIMIT 1",url).get("id")).longValue();
+            String extension=FileTypeUtils.getExtension(mime);
+            if(extension==null||!extension.matches("\\.[a-zA-Z0-9]{1,12}"))throw new GenerationProvider.ProviderException("INVALID_MEDIA","模型返回的文件格式不受支持，积分已退回",false);
+            String url=files.createFlatFile(item.bytes(),"result"+extension,mime);
+            var storedFile=studio.one("SELECT id,name FROM infra_file WHERE url=? AND deleted=0 ORDER BY id DESC LIMIT 1",url);
+            long file=((Number)storedFile.get("id")).longValue();String name=storedFile.get("name").toString();
             Integer width=null,height=null;if(operation.equals("IMAGE")){var image=ImageIO.read(new ByteArrayInputStream(item.bytes()));if(image!=null){width=image.getWidth();height=image.getHeight();}}
             stored.add(map("file",file,"mime",mime,"name",name,"size",item.bytes().length,"width",width,"height",height));
         }

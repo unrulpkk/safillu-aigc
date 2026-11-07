@@ -64,6 +64,14 @@ This screenshot is from the read-only layout fixture using a real generated resu
 - Full digital-human, motion-imitation, and voice-cloning paths retain the status documented in the README. Planned features are not counted as passed.
 - Actual browser cache verification used desktop Chromium; the full mobile/browser matrix has not been tested.
 
+## Flat media filenames — 2026-11-08
+
+The Linux backend build passed **37 tests**, including five tests for flat object naming, same-name collision prevention, content validation, normal framework directories, and historical nested-file reads. **15 live HTTP/database/R2 checks passed** on the isolated GitHub installation.
+
+Two uploads with the same original filename produced different `YYYYMMDD_UUID.ext` objects at the storage root, with unchanged bytes and original display titles. Exploration media used the same layout. A real Best MiniMax H3 4-second 480P generation accepted a flat R2 reference URL and produced a root-level MP4 whose object key, asset title, and HTTP download filename matched. Four credits settled with no outstanding reservation. An existing nested video retained its original path and identical bytes. Object dates use UTC; older files are not migrated.
+
+This run used real model requests, HTTP, database and storage operations; it does not add full browser or payment acceptance. See [test-results.json](test-results.json) for the individual checks.
+
 ## GitHub publication preflight
 
 The preflight covered 5,471 files selected for publication. Gitleaks 8.30.1 default rules and matching against locally known private values, including encoded forms, found no leaks; the embedded DER private-key check found zero. Fixed credential examples, personal bucket/domain settings, and LAN defaults were removed. Nested repository metadata was backed up outside Git, and its history is not imported.

@@ -41,11 +41,11 @@ class GenerationReferenceStorageTest {
         when(configs.getFileConfig(880004L)).thenReturn(config(880004L, false, true));
         byte[] bytes = {1, 2, 3};
         when(files.getFileContent(880002L, "old/image.png")).thenReturn(bytes);
-        when(files.createFile(eq(bytes), anyString(), eq("aigc/1/2/model-inputs/3"), eq("image/png"))).thenReturn(publicUrl);
+        when(files.createFlatFile(eq(bytes), eq("reference.png"), eq("image/png"))).thenReturn(publicUrl);
         assertEquals(publicUrl, storage.imageUrl(880002L, "old/image.png", "image/png", 1, 2, 3));
         var order = inOrder(files);
         order.verify(files).getFileContent(880002L, "old/image.png");
-        order.verify(files).createFile(eq(bytes), anyString(), anyString(), eq("image/png"));
+        order.verify(files).createFlatFile(eq(bytes), eq("reference.png"), eq("image/png"));
         verify(configs, never()).updateFileConfig(any());
     }
 
@@ -63,7 +63,7 @@ class GenerationReferenceStorageTest {
         when(target.getId()).thenReturn(880004L);
         when(configs.getFileConfig(880004L)).thenReturn(config(880004L, false, true));
         when(files.getFileContent(1L, "local.png")).thenReturn(new byte[]{1});
-        when(files.createFile(any(), anyString(), anyString(), anyString())).thenThrow(new IllegalStateException("mock upload failed"));
+        when(files.createFlatFile(any(), anyString(), anyString())).thenThrow(new IllegalStateException("mock upload failed"));
         var error = assertThrows(GenerationProvider.ProviderException.class,
                 () -> storage.imageUrl(1L, "local.png", "image/png", 1, 2, 3));
         assertEquals("REFERENCE_UPLOAD_FAILED", error.code);

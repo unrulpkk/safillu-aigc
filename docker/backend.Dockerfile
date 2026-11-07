@@ -4,7 +4,7 @@ WORKDIR /source
 ENV MAVEN_OPTS="-Xmx1024m"
 COPY zaomeng-backend/server/ ./
 RUN --mount=type=cache,target=/root/.m2 mvn -B -ntp -pl yudao-server -am package \
-    -Dtest=R2FileClientTest,ObjectStorageBootstrapTest,GenerationReferenceStorageTest,GenerationSubmissionTest,RedisConnectionConfigurationTest,EmailAuthServiceTest -Dsurefire.failIfNoSpecifiedTests=false
+    -Dtest=FlatFileStorageTest,R2FileClientTest,ObjectStorageBootstrapTest,GenerationReferenceStorageTest,GenerationSubmissionTest,RedisConnectionConfigurationTest,EmailAuthServiceTest -Dsurefire.failIfNoSpecifiedTests=false
 
 FROM eclipse-temurin:21-jre
 RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/* \

@@ -229,6 +229,8 @@ Store actual model, Google, Stripe, and storage credentials in private secret fi
 
 Configured Cloudflare R2 is preferred automatically after upload, read, and delete verification. Without usable R2 configuration, the existing storage remains active; new installations without cloud credentials use a persistent local upload volume. See the [R2 configuration template](docker/storage-r2.example.json). Historical files retain their original storage configuration IDs.
 
+New creator uploads, generated results, public reference copies, and exploration media use flat object keys: `YYYYMMDD_UUID.ext` at the storage root (UTC date), without tenant, workspace, task, or date directories. Generated download filenames use the same format. Uploaded assets retain their original display titles; existing files keep their recorded paths and remain readable.
+
 See [deployment and provider configuration](docker/README.txt) for secret file locations and activation commands.
 
 ## Repository layout

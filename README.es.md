@@ -229,6 +229,8 @@ Guarda las credenciales reales de los modelos, Google, Stripe y almacenamiento e
 
 Cloudflare R2 tiene prioridad automática cuando su configuración está completa y supera las pruebas de carga, lectura y eliminación. Si no está configurado o falla la verificación, se conserva el almacenamiento actual; las instalaciones nuevas sin credenciales de nube usan un volumen local persistente. Consulta la [plantilla de R2](docker/storage-r2.example.json). Los archivos existentes conservan sus identificadores de almacenamiento originales.
 
+Las nuevas subidas, los resultados generados, las copias públicas de referencias y los recursos de Explorar usan claves planas `AAAAMMDD_UUID.ext` en la raíz del almacenamiento (fecha UTC), sin carpetas de inquilino, espacio, tarea o fecha. Las descargas de resultados generados usan el mismo formato. Las subidas conservan sus títulos originales; los archivos existentes siguen siendo legibles mediante sus rutas registradas.
+
 Las rutas de los secretos y los comandos de activación se describen en la [guía de despliegue y configuración de proveedores](docker/README.txt), disponible actualmente en chino.
 
 ## Estructura del repositorio

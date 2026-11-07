@@ -64,6 +64,14 @@ La captura corresponde al entorno visual de solo lectura con un resultado genera
 - Las rutas completas de avatares, imitación de movimiento y clonación de voz mantienen el estado del README. Las funciones previstas no se cuentan como superadas.
 - La caché se verificó en Chromium de escritorio; no se completó toda la matriz de móviles y navegadores.
 
+## Nombres planos de archivos multimedia — 2026-11-08
+
+La compilación del backend en Linux superó **37 pruebas**, incluidas cinco sobre nombres planos, prevención de sobrescritura con nombres iguales, validación del contenido, carpetas habituales del framework y lectura de archivos históricos anidados. Se superaron **15 comprobaciones reales de HTTP, base de datos y R2** en la instalación aislada de GitHub.
+
+Dos subidas con el mismo nombre original produjeron objetos distintos `AAAAMMDD_UUID.ext` en la raíz, conservando sus bytes y títulos de presentación. Los recursos de Explorar usan la misma estructura. Una generación real de cuatro segundos a 480P con Best MiniMax H3 aceptó una referencia en la raíz de R2 y guardó un MP4 cuya clave, título y nombre de descarga HTTP coincidían. Se liquidaron cuatro créditos sin reservas pendientes. Un vídeo histórico anidado conservó su ruta y los mismos bytes. Las fechas de las claves usan UTC; los archivos anteriores no se migran.
+
+La comprobación usa solicitudes reales al modelo, HTTP, base de datos y almacenamiento; no añade una validación completa del navegador ni de pagos. Consulta los detalles en [test-results.json](test-results.json).
+
 ## Comprobación previa a la publicación en GitHub
 
 La revisión abarcó 5.471 archivos seleccionados para publicar. Las reglas predeterminadas de Gitleaks 8.30.1 y la comparación con valores privados locales, incluidas sus formas codificadas, no detectaron filtraciones; la revisión de claves privadas DER incrustadas dio cero resultados. Se eliminaron credenciales fijas de ejemplo, datos personales de bucket/dominio y direcciones de red local. Los metadatos de repositorios anidados se respaldaron fuera de Git, sin importar su historial.

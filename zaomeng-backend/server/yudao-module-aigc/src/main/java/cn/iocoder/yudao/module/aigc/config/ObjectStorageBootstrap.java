@@ -1,6 +1,7 @@
 package cn.iocoder.yudao.module.aigc.config;
 
 import cn.iocoder.yudao.module.infra.framework.file.core.client.FileClient;
+import cn.iocoder.yudao.module.infra.framework.file.core.utils.FilePathUtils;
 import cn.iocoder.yudao.module.infra.service.file.FileConfigService;
 import cn.iocoder.yudao.framework.common.util.json.JsonUtils;
 import cn.iocoder.yudao.module.infra.controller.admin.file.vo.config.FileConfigSaveReqVO;
@@ -17,7 +18,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
-import java.util.UUID;
 import java.util.Map;
 import java.util.LinkedHashMap;
 import java.util.Objects;
@@ -71,7 +71,7 @@ public class ObjectStorageBootstrap implements ApplicationRunner {
         long configId = r2 ? 880004L : 880002L;
         String provider = r2 ? "r2" : "qiniu";
         Path result = logs.resolve(provider + "-storage-bootstrap.json");
-        String object = "aigc/system/probe/" + UUID.randomUUID() + ".png";
+        String object = FilePathUtils.flatFileName("storage-probe.png");
         FileClient file = null;
         boolean uploaded = false;
         try {

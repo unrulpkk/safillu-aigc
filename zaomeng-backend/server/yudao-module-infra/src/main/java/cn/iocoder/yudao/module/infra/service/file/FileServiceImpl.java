@@ -107,6 +107,16 @@ public class FileServiceImpl implements FileService {
     @Override
     @SneakyThrows
     public String createFile(byte[] content, String name, String directory, String type) {
+        return storeFile(content, name, directory, type, false);
+    }
+
+    @Override
+    @SneakyThrows
+    public String createFlatFile(byte[] content, String name, String type) {
+        return storeFile(content, name, null, type, true);
+    }
+
+    private String storeFile(byte[] content, String name, String directory, String type, boolean flat) throws Exception {
         // 1.1 处理 name 的合法性，禁止携带目录路径
         name = FilePathUtils.validateFileName(name);
 
@@ -135,7 +145,10 @@ public class FileServiceImpl implements FileService {
         }
 
         // 2.1 生成上传的 path，需要保证唯一
-        String path = generateUploadPath(name, directory);
+        if (flat) {
+            name = FilePathUtils.flatFileName(name);
+        }
+        String path = flat ? name : generateUploadPath(name, directory);
         // 2.2 上传到文件存储器
         FileClient client = fileConfigService.getMasterFileClient();
         Assert.notNull(client, "客户端(master) 不能为空");

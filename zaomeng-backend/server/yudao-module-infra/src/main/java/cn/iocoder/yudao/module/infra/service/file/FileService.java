@@ -36,6 +36,9 @@ public interface FileService {
     String createFile(@NotEmpty(message = "文件内容不能为空") byte[] content,
                       String name, String directory, String type);
 
+    /** Store media at the bucket root as yyyyMMdd_UUID.ext; retain normal content validation. */
+    String createFlatFile(@NotEmpty(message = "文件内容不能为空") byte[] content, String name, String type);
+
     /**
      * 生成文件预签名地址信息，用于上传
      *

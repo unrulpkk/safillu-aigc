@@ -114,5 +114,98 @@
     "installerAndPublicFileTestsPassed": 9,
     "legacyStorageAndDataPreserved": true,
     "secretScanWorkflowAdded": true
+  },
+  "updatedOn": "2026-11-08",
+  "flatMediaStorageVerification": {
+    "testedOn": "2026-11-08",
+    "timezone": "Asia/Shanghai",
+    "status": "PASS",
+    "objectKeyFormat": "YYYYMMDD_UUID.ext",
+    "objectKeyDateZone": "UTC",
+    "directories": 0,
+    "linuxBackendTests": {
+      "passed": 37,
+      "failed": 0
+    },
+    "liveChecks": {
+      "passed": 15,
+      "failed": 0
+    },
+    "checks": [
+      {
+        "name": "Existing nested video path is unchanged",
+        "passed": true
+      },
+      {
+        "name": "Existing nested video still returns identical bytes",
+        "passed": true
+      },
+      {
+        "name": "uploadA uses a date and UUID in the bucket root",
+        "passed": true
+      },
+      {
+        "name": "uploadA public URL returns the original bytes",
+        "passed": true
+      },
+      {
+        "name": "uploadB uses a date and UUID in the bucket root",
+        "passed": true
+      },
+      {
+        "name": "uploadB public URL returns the original bytes",
+        "passed": true
+      },
+      {
+        "name": "Uploading the same original filename never overwrites an object",
+        "passed": true
+      },
+      {
+        "name": "Original upload display title is retained",
+        "passed": true
+      },
+      {
+        "name": "Exploration media also uses a flat date and UUID key",
+        "passed": true
+      },
+      {
+        "name": "A real video generation accepts the flat public reference URL",
+        "passed": true
+      },
+      {
+        "name": "Generated video uses a date and UUID filename without directories",
+        "passed": true
+      },
+      {
+        "name": "New generated MP4 is publicly readable and matches owner download",
+        "passed": true
+      },
+      {
+        "name": "Generated asset title matches its date and UUID filename",
+        "passed": true
+      },
+      {
+        "name": "Generated HTTP download filename uses the same format",
+        "passed": true
+      },
+      {
+        "name": "The single four-second task settles four credits with no pending reservation",
+        "passed": true
+      }
+    ],
+    "observedTaskStates": [
+      "QUEUED",
+      "RUNNING",
+      "MATERIALIZING",
+      "SUCCEEDED"
+    ],
+    "liveGeneration": {
+      "model": "Best MiniMax H3",
+      "resolution": "480P",
+      "seconds": 4,
+      "platformCredits": 4
+    },
+    "legacyFileBytesUnchanged": true,
+    "scope": "New creator uploads, generated results, public reference copies, exploration media and storage probes. Existing paths and normal framework upload directories remain supported."
   }
 }

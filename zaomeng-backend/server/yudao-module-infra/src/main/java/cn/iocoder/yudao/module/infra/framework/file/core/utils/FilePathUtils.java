@@ -5,6 +5,11 @@ import cn.hutool.core.util.StrUtil;
 
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.UUID;
 
 import static cn.iocoder.yudao.framework.common.exception.util.ServiceExceptionUtil.exception;
 import static cn.iocoder.yudao.module.infra.enums.ErrorCodeConstants.FILE_PATH_INVALID;
@@ -17,6 +22,15 @@ import static cn.iocoder.yudao.module.infra.enums.ErrorCodeConstants.FILE_PATH_I
 public class FilePathUtils {
 
     private FilePathUtils() {
+    }
+
+    /** New media share the bucket root; UTC dates sort files consistently across deployments. */
+    public static String flatFileName(String name) {
+        validateFileName(name);
+        String extension = FileUtil.extName(name);
+        return LocalDate.now(ZoneOffset.UTC).format(DateTimeFormatter.BASIC_ISO_DATE)
+                + "_" + UUID.randomUUID()
+                + (StrUtil.isEmpty(extension) ? "" : "." + extension.toLowerCase(Locale.ROOT));
     }
 
     /**
