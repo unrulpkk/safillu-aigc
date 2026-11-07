@@ -15,7 +15,7 @@
 
 [我们的愿景](#我们的愿景) · [功能清单](#功能清单) · [Roadmap](#roadmap规划中) · [开始部署](#快速开始) · [密钥申请与配置](docs/credentials.zh-CN.md) · [测试报告](docs/test-report.zh-CN.md) · [部署说明](docker/README.txt) · [提出想法](https://github.com/unrulpkk/safillu-aigc/issues)
 
-![Safillu 英文创作工作台：提示词、模型参数与再次生成入口](docs/images/safillu-create-en.jpg)
+![Safillu 英文图片编辑工作台：蓝色小鸟参考图与生成的黄色小鸟](docs/images/safillu-create-en.jpg)
 
 </div>
 
@@ -25,17 +25,32 @@
 
 ## 看看 Safillu 的界面
 
-以下截图使用实际英文界面与整理后的演示内容。姓名、积分余额和任务状态均为展示示例；真实生成结果与验证情况请查看[测试报告](docs/test-report.zh-CN.md)。
+以下 10 张截图使用实际英文界面，展示之前真实请求模型生成并保存的图片、视频、语音和音乐。标题、提示词译文、项目分组及探索展示内容经过整理，个人名称使用占位名称；生成素材未修改，任务状态和积分余额保留验收记录中的真实数据。验证情况与模型服务限制请查看[测试报告](docs/test-report.zh-CN.md)。
+
+| 文生图 | 作品预览与复用 |
+| --- | --- |
+| [![Qwen Image 2.1 真实生成的蓝色陶瓷小鸟与英文创作界面](docs/images/safillu-images-en.jpg)](docs/images/safillu-images-en.jpg) | [![Z-Image Base 咖啡杯作品预览、英文提示词与模型信息](docs/images/safillu-preview-en.jpg)](docs/images/safillu-preview-en.jpg) |
+| **Qwen Image 2.1**：已保存的产品摄影风格作品。 | **Z-Image Base**：查看作品、复制提示词、复用参考素材。 |
+
+| 视频：流动的云景 | 视频：海边的片刻 |
+| --- | --- |
+| [![MiniMax H3 真实云景视频、播放器与生成参数](docs/images/safillu-video-clouds-en.jpg)](docs/images/safillu-video-clouds-en.jpg) | [![MiniMax H3 SelfLift 真实海浪视频、播放器与生成参数](docs/images/safillu-video-sea-en.jpg)](docs/images/safillu-video-sea-en.jpg) |
+| **MiniMax H3**：5 秒云景视频。 | **MiniMax H3 SelfLift**：4 秒海浪视频。 |
+
+| 语音生成 | 音乐生成 |
+| --- | --- |
+| [![Qwen3 语音设计的已生成语音与英文声音描述界面](docs/images/safillu-voice-en.jpg)](docs/images/safillu-voice-en.jpg) | [![YuE2 已生成的钢琴音频与英文音乐工作台](docs/images/safillu-music-en.jpg)](docs/images/safillu-music-en.jpg) |
+| **Qwen3 Voice Design**：语音播放与声音描述。 | **YuE2**：已保存的纯音乐作品。 |
 
 | 留下每一次创作 | 发现下一个灵感 |
 | --- | --- |
 | [![英文资产库：搜索、筛选、收藏与素材复用](docs/images/safillu-assets-en.jpg)](docs/images/safillu-assets-en.jpg) | [![英文探索页：灵感作品与提示词复用](docs/images/safillu-explore-en.jpg)](docs/images/safillu-explore-en.jpg) |
-| **资产库**：上传、整理、收藏素材，并用于后续创作。 | **探索**：由管理后台发布精选内容，用户可复用提示词。 |
+| **资产库**：真实生成的小鸟、杯子等作品，可预览并复用。 | **探索**：用同一批真实作品整理的灵感展示。 |
 
 <details>
-<summary><strong>任务中心：生成进度、历史记录与积分预占</strong></summary>
+<summary><strong>任务中心：真实已完成请求、历史记录与积分账务</strong></summary>
 
-![英文任务中心：生成中、排队中、已完成的演示任务与积分预占](docs/images/safillu-tasks-en.jpg)
+![英文任务中心：真实已完成的模型请求记录、可用积分与已消耗积分](docs/images/safillu-tasks-en.jpg)
 
 </details>
 

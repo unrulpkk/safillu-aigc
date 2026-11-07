@@ -15,7 +15,7 @@ Código abierto. Autoalojado. Un punto de partida para tu propia plataforma de I
 
 [Nuestra visión](#nuestra-visión) · [Funciones](#lista-de-funciones) · [Hoja de ruta](#hoja-de-ruta-funciones-previstas) · [Empezar](#inicio-rápido) · [Credenciales](docs/credentials.es.md) · [Informe de pruebas](docs/test-report.es.md) · [Guía de despliegue](docker/README.txt) · [Proponer una idea](https://github.com/unrulpkk/safillu-aigc/issues)
 
-![Espacio de creación de Safillu en inglés con instrucciones, ajustes del modelo y regeneración](docs/images/safillu-create-en.jpg)
+![Edición de imágenes en Safillu en inglés con un pájaro azul de referencia y el pájaro amarillo generado](docs/images/safillu-create-en.jpg)
 
 </div>
 
@@ -25,17 +25,32 @@ Para quienes desarrollan un **SaaS de creación con IA**, Safillu también inclu
 
 ## Así es Safillu
 
-Las capturas muestran la interfaz real en inglés con contenido de demostración seleccionado. Los nombres, saldos y estados de las tareas son ejemplos; los resultados de generación reales y su verificación se documentan en el [informe de pruebas](docs/test-report.es.md).
+Estas diez capturas utilizan imágenes, vídeos, voz y música guardados de pruebas anteriores con solicitudes reales a los modelos, en la interfaz real en inglés. Los títulos, las traducciones de las instrucciones, la agrupación de proyectos y la galería Explorar se han preparado para la presentación; el nombre del perfil es ficticio. Los archivos generados no se han modificado y el historial conserva los estados y saldos registrados. Consulta el [informe de pruebas](docs/test-report.es.md) para conocer la verificación y las limitaciones de los proveedores.
+
+| De texto a imagen | Previsualización y reutilización |
+| --- | --- |
+| [![Pájaro de cerámica azul generado con Qwen Image 2.1 en la interfaz en inglés](docs/images/safillu-images-en.jpg)](docs/images/safillu-images-en.jpg) | [![Taza generada con Z-Image Base con instrucciones y detalles del modelo en inglés](docs/images/safillu-preview-en.jpg)](docs/images/safillu-preview-en.jpg) |
+| **Qwen Image 2.1**: un resultado guardado de fotografía de producto. | **Z-Image Base**: examina el resultado, copia las instrucciones o reutilízalo como referencia. |
+
+| Vídeo: un cielo en movimiento | Vídeo: un momento junto al mar |
+| --- | --- |
+| [![Vídeo de nubes guardado de MiniMax H3 con reproducción y ajustes](docs/images/safillu-video-clouds-en.jpg)](docs/images/safillu-video-clouds-en.jpg) | [![Vídeo de olas guardado de MiniMax H3 SelfLift con reproducción y ajustes](docs/images/safillu-video-sea-en.jpg)](docs/images/safillu-video-sea-en.jpg) |
+| **MiniMax H3**: cinco segundos de nubes. | **MiniMax H3 SelfLift**: cuatro segundos en la costa. |
+
+| Generación de voz | Generación de música |
+| --- | --- |
+| [![Voz guardada de Qwen3 Voice Design y controles de descripción en inglés](docs/images/safillu-voice-en.jpg)](docs/images/safillu-voice-en.jpg) | [![Audio de piano guardado de YuE2 en el espacio musical en inglés](docs/images/safillu-music-en.jpg)](docs/images/safillu-music-en.jpg) |
+| **Qwen3 Voice Design**: reproducción de voz y descripción del timbre. | **YuE2**: una pieza instrumental guardada. |
 
 | Conserva tus creaciones | Descubre tu próxima idea |
 | --- | --- |
 | [![Biblioteca en inglés con búsqueda, filtros, favoritos y referencias reutilizables](docs/images/safillu-assets-en.jpg)](docs/images/safillu-assets-en.jpg) | [![Galería Explorar en inglés con ideas creativas reutilizables](docs/images/safillu-explore-en.jpg)](docs/images/safillu-explore-en.jpg) |
-| **Biblioteca de recursos**: sube, organiza, guarda en favoritos y reutiliza tus materiales. | **Explorar**: publica ideas desde el panel de administración y reutiliza sus instrucciones. |
+| **Biblioteca de recursos**: pájaros y tazas generados, listos para previsualizar y reutilizar. | **Explorar**: una galería preparada con los mismos resultados generados. |
 
 <details>
-<summary><strong>Centro de tareas: progreso de generación, historial y créditos reservados</strong></summary>
+<summary><strong>Centro de tareas: solicitudes reales completadas, historial y contabilidad de créditos</strong></summary>
 
-![Centro de tareas en inglés con ejemplos de generación en curso, en cola y completada, y créditos reservados](docs/images/safillu-tasks-en.jpg)
+![Centro de tareas en inglés con solicitudes reales completadas y los saldos de créditos disponibles y consumidos](docs/images/safillu-tasks-en.jpg)
 
 </details>
 

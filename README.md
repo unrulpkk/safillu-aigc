@@ -15,7 +15,7 @@ Open source. Self-hosted. A starting point for your own AI platform.
 
 [Our vision](#our-vision) · [Features](#feature-list) · [Roadmap](#roadmap-planned) · [Get started](#quick-start) · [Credentials](docs/credentials.md) · [Test report](docs/test-report.md) · [Deployment guide](docker/README.txt) · [Share an idea](https://github.com/unrulpkk/safillu-aigc/issues)
 
-![Safillu English creation workspace with a prompt, model settings, and regeneration controls](docs/images/safillu-create-en.jpg)
+![Safillu English image-editing workspace with a blue bird reference and the generated yellow bird](docs/images/safillu-create-en.jpg)
 
 </div>
 
@@ -25,17 +25,32 @@ Building an **AI creative SaaS**? Safillu also provides the foundations around g
 
 ## A look inside Safillu
 
-Screenshots show the actual English interface with curated demo content. Names, credit balances, and task states are illustrative; live generation results and verification are documented in the [test report](docs/test-report.md).
+These ten screenshots use saved image, video, speech, and music outputs from earlier live generation tests in the actual English interface. Titles, prompt translations, project groupings, and the Explore gallery are curated for presentation; the profile name is a placeholder. Generated media are unchanged, and the task history retains its recorded statuses and credit balances. See the [test report](docs/test-report.md) for verification and provider limitations.
+
+| Text-to-image | Preview and reuse |
+| --- | --- |
+| [![Qwen Image 2.1 generated blue ceramic bird in the English workspace](docs/images/safillu-images-en.jpg)](docs/images/safillu-images-en.jpg) | [![Z-Image Base coffee cup result with its English prompt and model details](docs/images/safillu-preview-en.jpg)](docs/images/safillu-preview-en.jpg) |
+| **Qwen Image 2.1** — a saved product-photography result. | **Z-Image Base** — inspect a result, copy the prompt, or reuse it as a reference. |
+
+| Video: a sky in motion | Video: a moment by the sea |
+| --- | --- |
+| [![Saved MiniMax H3 cloud video with playback and generation settings](docs/images/safillu-video-clouds-en.jpg)](docs/images/safillu-video-clouds-en.jpg) | [![Saved MiniMax H3 SelfLift wave video with playback and generation settings](docs/images/safillu-video-sea-en.jpg)](docs/images/safillu-video-sea-en.jpg) |
+| **MiniMax H3** — a five-second cloud scene. | **MiniMax H3 SelfLift** — a four-second coastal scene. |
+
+| Speech generation | Music generation |
+| --- | --- |
+| [![Qwen3 Voice Design saved speech and English voice description controls](docs/images/safillu-voice-en.jpg)](docs/images/safillu-voice-en.jpg) | [![YuE2 saved piano audio in the English music workspace](docs/images/safillu-music-en.jpg)](docs/images/safillu-music-en.jpg) |
+| **Qwen3 Voice Design** — speech playback and voice description. | **YuE2** — a saved instrumental soundtrack. |
 
 | Keep your creations | Discover your next idea |
 | --- | --- |
 | [![English asset library with search, filters, favorites, and reusable references](docs/images/safillu-assets-en.jpg)](docs/images/safillu-assets-en.jpg) | [![English exploration gallery with reusable creative ideas](docs/images/safillu-explore-en.jpg)](docs/images/safillu-explore-en.jpg) |
-| **Asset library** — upload, organize, favorite, and reuse your materials. | **Explore** — publish curated ideas from the administration panel and reuse their prompts. |
+| **Asset library** — actual generated birds and cups, ready to preview and reuse. | **Explore** — a showcase gallery curated from the same generated results. |
 
 <details>
-<summary><strong>Task center: generation progress, history, and reserved credits</strong></summary>
+<summary><strong>Task center: actual completed requests, history, and credit accounting</strong></summary>
 
-![English task center showing generating, queued, and completed demo tasks with credit reservations](docs/images/safillu-tasks-en.jpg)
+![English task center showing recorded completed model requests and the available and consumed credit balances](docs/images/safillu-tasks-en.jpg)
 
 </details>
 
