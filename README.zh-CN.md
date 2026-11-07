@@ -15,13 +15,29 @@
 
 [我们的愿景](#我们的愿景) · [功能清单](#功能清单) · [Roadmap](#roadmap规划中) · [开始部署](#快速开始) · [密钥申请与配置](docs/credentials.zh-CN.md) · [测试报告](docs/test-report.zh-CN.md) · [部署说明](docker/README.txt) · [提出想法](https://github.com/unrulpkk/safillu-aigc/issues)
 
-![Safillu 创作流程](docs/images/safillu-workflow.svg)
+![Safillu 英文创作工作台：提示词、模型参数与再次生成入口](docs/images/safillu-create-en.jpg)
 
 </div>
 
 **Safillu 是一个参考即梦 AI（Jimeng AI）创作流程的开源 AI 视频创作与图像生成平台，支持自行部署。** 从提示词开始，查看生成进度，带着原来的参数继续尝试，再把满意的结果留在自己的素材库里。
 
 如果你想开发一款 **AI 创作 SaaS**，这里也准备好了生成之外的基础能力：账号、积分、管理后台、内容运营和 Docker 部署。
+
+## 看看 Safillu 的界面
+
+以下截图使用实际英文界面与整理后的演示内容。姓名、积分余额和任务状态均为展示示例；真实生成结果与验证情况请查看[测试报告](docs/test-report.zh-CN.md)。
+
+| 留下每一次创作 | 发现下一个灵感 |
+| --- | --- |
+| [![英文资产库：搜索、筛选、收藏与素材复用](docs/images/safillu-assets-en.jpg)](docs/images/safillu-assets-en.jpg) | [![英文探索页：灵感作品与提示词复用](docs/images/safillu-explore-en.jpg)](docs/images/safillu-explore-en.jpg) |
+| **资产库**：上传、整理、收藏素材，并用于后续创作。 | **探索**：由管理后台发布精选内容，用户可复用提示词。 |
+
+<details>
+<summary><strong>任务中心：生成进度、历史记录与积分预占</strong></summary>
+
+![英文任务中心：生成中、排队中、已完成的演示任务与积分预占](docs/images/safillu-tasks-en.jpg)
+
+</details>
 
 ## 我们的愿景
 

@@ -15,13 +15,29 @@ Código abierto. Autoalojado. Un punto de partida para tu propia plataforma de I
 
 [Nuestra visión](#nuestra-visión) · [Funciones](#lista-de-funciones) · [Hoja de ruta](#hoja-de-ruta-funciones-previstas) · [Empezar](#inicio-rápido) · [Credenciales](docs/credentials.es.md) · [Informe de pruebas](docs/test-report.es.md) · [Guía de despliegue](docker/README.txt) · [Proponer una idea](https://github.com/unrulpkk/safillu-aigc/issues)
 
-![El flujo creativo de Safillu](docs/images/safillu-workflow.svg)
+![Espacio de creación de Safillu en inglés con instrucciones, ajustes del modelo y regeneración](docs/images/safillu-create-en.jpg)
 
 </div>
 
 **Safillu lleva el flujo creativo de Jimeng AI (即梦 AI) a una plataforma de código abierto y autoalojada para crear vídeos e imágenes con IA.** Parte de una idea, sigue la generación, prueba otra versión recuperando los ajustes anteriores y guarda los resultados en tu biblioteca.
 
 Para quienes desarrollan un **SaaS de creación con IA**, Safillu también incluye cuentas, créditos, un panel de administración, gestión de contenidos y despliegue con Docker.
+
+## Así es Safillu
+
+Las capturas muestran la interfaz real en inglés con contenido de demostración seleccionado. Los nombres, saldos y estados de las tareas son ejemplos; los resultados de generación reales y su verificación se documentan en el [informe de pruebas](docs/test-report.es.md).
+
+| Conserva tus creaciones | Descubre tu próxima idea |
+| --- | --- |
+| [![Biblioteca en inglés con búsqueda, filtros, favoritos y referencias reutilizables](docs/images/safillu-assets-en.jpg)](docs/images/safillu-assets-en.jpg) | [![Galería Explorar en inglés con ideas creativas reutilizables](docs/images/safillu-explore-en.jpg)](docs/images/safillu-explore-en.jpg) |
+| **Biblioteca de recursos**: sube, organiza, guarda en favoritos y reutiliza tus materiales. | **Explorar**: publica ideas desde el panel de administración y reutiliza sus instrucciones. |
+
+<details>
+<summary><strong>Centro de tareas: progreso de generación, historial y créditos reservados</strong></summary>
+
+![Centro de tareas en inglés con ejemplos de generación en curso, en cola y completada, y créditos reservados](docs/images/safillu-tasks-en.jpg)
+
+</details>
 
 ## Nuestra visión
 

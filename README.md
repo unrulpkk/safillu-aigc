@@ -15,13 +15,29 @@ Open source. Self-hosted. A starting point for your own AI platform.
 
 [Our vision](#our-vision) · [Features](#feature-list) · [Roadmap](#roadmap-planned) · [Get started](#quick-start) · [Credentials](docs/credentials.md) · [Test report](docs/test-report.md) · [Deployment guide](docker/README.txt) · [Share an idea](https://github.com/unrulpkk/safillu-aigc/issues)
 
-![The Safillu creative workflow](docs/images/safillu-workflow.svg)
+![Safillu English creation workspace with a prompt, model settings, and regeneration controls](docs/images/safillu-create-en.jpg)
 
 </div>
 
 **Safillu brings the creative workflow of Jimeng AI (即梦 AI) to an open-source, self-hosted AI video and image creation platform.** Start with a prompt, follow the generation, try another direction with your original settings, and keep the results in your asset library.
 
 Building an **AI creative SaaS**? Safillu also provides the foundations around generation: accounts, credits, an administration panel, content operations, and Docker deployment.
+
+## A look inside Safillu
+
+Screenshots show the actual English interface with curated demo content. Names, credit balances, and task states are illustrative; live generation results and verification are documented in the [test report](docs/test-report.md).
+
+| Keep your creations | Discover your next idea |
+| --- | --- |
+| [![English asset library with search, filters, favorites, and reusable references](docs/images/safillu-assets-en.jpg)](docs/images/safillu-assets-en.jpg) | [![English exploration gallery with reusable creative ideas](docs/images/safillu-explore-en.jpg)](docs/images/safillu-explore-en.jpg) |
+| **Asset library** — upload, organize, favorite, and reuse your materials. | **Explore** — publish curated ideas from the administration panel and reuse their prompts. |
+
+<details>
+<summary><strong>Task center: generation progress, history, and reserved credits</strong></summary>
+
+![English task center showing generating, queued, and completed demo tasks with credit reservations](docs/images/safillu-tasks-en.jpg)
+
+</details>
 
 ## Our vision
 
